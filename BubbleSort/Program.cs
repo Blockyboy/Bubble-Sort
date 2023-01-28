@@ -15,24 +15,14 @@ namespace BubbleSort
                 numbers[i] = r.Next(0, 100);
             }
 
-            DisplayBeforeAndAfterSort(ref numbers);
-        }
-
-        public static void DisplayBeforeAndAfterSort(ref int[] numbers)
-        {
-
             Console.WriteLine("Before Sort");
-
-            for (int i = 0; i < numbers.Length; ++i)
-            {
-                Console.WriteLine(Convert.ToString(numbers[i]));
-            }
+            Display(ref numbers);
 
             BubbleSort(ref numbers);
+        }
 
-            Console.WriteLine("");
-
-            Console.WriteLine("After Sort");
+        public static void Display(ref int[] numbers)
+        {
             for (int i = 0; i < numbers.Length; ++i)
             {
                 Console.WriteLine(Convert.ToString(numbers[i]));
@@ -73,6 +63,9 @@ namespace BubbleSort
                     }
                 }
             }
+
+            Console.WriteLine("After Sort");
+            Display(ref numbers);
         }
         static void Main(string[] args)
         {
